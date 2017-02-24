@@ -22,4 +22,6 @@ def main():
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":
+	print('Tornado serving on port: {}'.format(options.port))
 	main()
+	

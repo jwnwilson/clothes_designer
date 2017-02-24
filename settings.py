@@ -44,18 +44,25 @@ settings['cookie_secret'] = "your-cookie-secret"
 settings['xsrf_cookies'] = True
 settings['template_loader'] = tornado.template.Loader(TEMPLATE_ROOT)
 
-SYSLOG_TAG = "clothes_designer"
-SYSLOG_FACILITY = logging.handlers.SysLogHandler.LOG_LOCAL2
-
 # See PEP 391 and logconfig for formatting help.  Each section of LOGGERS
 # will get merged into the corresponding section of log_settings.py.
 # Handlers and log levels are set up automatically based on LOG_LEVEL and DEBUG
 # unless you set them here.  Messages will not propagate through a logger
 # unless propagate: True is set.
 LOGGERS = {
-   'loggers': {
-        '': {},
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG'
+        }
     },
+    'loggers': {
+        'mylogger': {
+            'handlers': ['console']
+        }
+    }
 }
 
 if settings['debug']:
@@ -64,8 +71,7 @@ else:
     LOG_LEVEL = logging.INFO
 USE_SYSLOG = DEPLOYMENT != DeploymentType.SOLO
 
-logconfig.initialize_logging(SYSLOG_TAG, SYSLOG_FACILITY, LOGGERS,
-        LOG_LEVEL, USE_SYSLOG)
+logconfig.from_dict(LOGGERS)
 
 if options.config:
     tornado.options.parse_config_file(options.config)

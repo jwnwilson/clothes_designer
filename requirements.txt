@@ -1,8 +1,11 @@
 appdirs==1.4.0
 backports-abc==0.5
 certifi==2017.1.23
+logconfig==0.4.0
+logutils==0.3.4.1
 packaging==16.8
 pyparsing==2.1.10
+PyYAML==3.12
 singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.4.2
