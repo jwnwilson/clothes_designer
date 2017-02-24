@@ -5,15 +5,12 @@ var src_dir = './';
 var style_dir = src_dir + 'styles/';
 var scripts_dir = src_dir + 'scripts/';
 var images_dir = src_dir + 'images/';
-var dist_dir = 'static/';
+var dist_dir = '../static/';
 var build_dir = 'build/';
 var dist_style_dir = dist_dir + 'css';
 var dist_scripts_dir = dist_dir + 'js';
 var dist_images_dir = dist_dir + 'images';
 var dependencies_js_dirs = [
-  'bower_components/requirejs/require.js',
-  'bower_components/jquery/dist/jquery.min.js',
-  'bower_components/socket.io-client/dist/socket.io.min.js',
   'bower_components/bootstrap/dist/js/bootstrap.min.js'
 ];
 var dependencies_css_dirs = [
@@ -58,24 +55,6 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-gulp.task('require-optimizer', ['scripts'], function requireOptimizer() {
-  return rjs({
-    baseUrl: dist_scripts_dir,
-    paths: {
-      jquery: 'lib/jquery.min',
-      socketio: 'lib/socket.io.min'
-    },
-    //name: 'main',
-    include: [
-      'main',
-      'chat'
-    ],
-    optimize: "uglify",
-    out: 'optimized.js',
-    removeCombined: true
-  }).pipe(gulp.dest(dist_scripts_dir));
-});
-
 // Dependencies
 gulp.task('dependencies', function() {
   var js_dependancies = gulp.src(dependencies_js_dirs)
@@ -100,7 +79,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('dependencies', 'styles', 'scripts', 'require-optimizer', 'images');
+  gulp.start('dependencies', 'styles', 'scripts', 'images');
 });
 
 // Watch
