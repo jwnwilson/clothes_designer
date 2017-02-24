@@ -1,0 +1,30 @@
+{
+  "name": "clothing designer",
+  "version": "1.0.0",
+  "description": "Angular clothing designer app",
+  "main": "app.js",
+  "author": "Noel Wilson",
+  "license": "ISC",
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.7.3"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.4"
+  }
+}
