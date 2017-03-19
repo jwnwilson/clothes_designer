@@ -13,12 +13,12 @@ fi
 # Simple setup script to install temporary venv into project directory to make cleaning up easier
 if [ ! -d ./venv ]
 then
-    sudo easy_install pip
-    pip install virtualenv
+    sudo easy_install pip3
+    pip3 install virtualenv
     virtualenv venv
     source ./venv/bin/activate
     # fabric so we can use fab commands
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 fi
 
 source ./venv/bin/activate

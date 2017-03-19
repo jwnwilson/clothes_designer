@@ -1,15 +1,19 @@
 {
-  "name": "clothing designer",
+  "name": "clothing_designer",
   "version": "1.0.0",
   "description": "Angular clothing designer app",
   "main": "app.js",
   "author": "Noel Wilson",
   "license": "ISC",
   "engines": {
-    "node": "5.9.1",
+    "node": "7.6.0",
     "npm": "3.7.3"
   },
   "dependencies": {
+    "node": "^0.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "del": "^2.2.2",
